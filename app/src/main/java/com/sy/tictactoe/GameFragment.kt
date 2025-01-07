@@ -1,5 +1,6 @@
 package com.sy.tictactoe
 
+import android.graphics.Color
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -42,6 +43,7 @@ class GameFragment : Fragment() {
 
         board[row][col] = currentPlayer
         button.text = currentPlayer
+        button.setTextColor(if (currentPlayer == "X") Color.RED else Color.BLUE)
 
         if (checkWinner()) {
             view?.findViewById<TextView>(R.id.game_status)?.text = "Player $currentPlayer Wins!"
