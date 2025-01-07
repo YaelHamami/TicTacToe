@@ -1,10 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:gravity="center"
     android:background="#FFFFFF">
 
     <!-- Game Board -->
@@ -12,10 +10,14 @@
         android:id="@+id/game_board"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:rowCount="3"
-        android:columnCount="3"
+        android:layout_marginTop="8dp"
         android:background="#000000"
-        android:padding="2dp">
+        android:columnCount="3"
+        android:padding="2dp"
+        android:rowCount="3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <!-- Buttons for the 3x3 grid -->
         <Button
@@ -79,18 +81,26 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:textSize="18sp"
         android:text="Player X's Turn"
-        android:textColor="#000000" />
+        android:textColor="#000000"
+        android:textSize="18sp"
+        app:layout_constraintTop_toBottomOf="@id/game_board"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <!-- Play Again Button -->
     <Button
         android:id="@+id/play_again_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="Play Again"
-        android:visibility="gone"
+        android:layout_marginBottom="30dp"
         android:backgroundTint="#4CAF50"
-        android:textColor="#FFFFFF" />
-</LinearLayout>
+        android:text="Play Again"
+        android:textColor="#FFFFFF"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
